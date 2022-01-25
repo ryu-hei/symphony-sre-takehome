@@ -14,8 +14,10 @@ Build a minikube cluster, you can create one by using minikube(https://minikube.
 - Play with Kubernetes
 
 you will need to:
-compose a docker image that will be deployed onto the kube cluster then you will deployment.yml to push the docker into a pod and a service.yml to access the application from the web.
+compose a docker image that will be deployed onto the kube cluster
+-then you will deployment.yml to push the docker into a pod
+-service.yml to access the application from the web.
 
-
+Once complete fork this repo - request a PR. 
 
 
