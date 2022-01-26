@@ -4,10 +4,11 @@ Please allocate up to two hours to complete this exercise, you may present missi
 
 We're excited to have you this far along in the interview process!
 
-#Technical exercise
+# Technical exercise
+
 In this exercise, we will be testing your container aptitude, docker, kubernetes and configuration management skills. 
 
-you are going to deploy code onto a kubernetes cluster! 
+- Deploy a Hello World website onto a kubernetes cluster! 
 We would like you to show a brief understanding of the steps you took and any suggestions for better clarity of the exercise. 
 
 Build a minikube cluster, you can create one by using minikube(https://minikube.sigs.k8s.io/docs/start/) or you can use a kubernetes playground:
