@@ -22,7 +22,7 @@ finally you will provide a service.yml to access the application from the web.
 
 Some examples of code you can push -
 Django Webserver
-Websocket app
+
 Once complete fork this repo - request a PR. 
 
 
