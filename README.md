@@ -25,5 +25,10 @@ Some examples of code you can push -
 Django Webserver
 
 Once complete fork this repo - request a PR. 
-
+Upload
+For all services deployed onto the container
+- service.yml
+- deployment.yml
+- docker-compose
+- A runbook guide of all your commands and notes to get it a new user up and running
 
