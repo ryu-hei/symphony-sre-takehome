@@ -1,4 +1,4 @@
-# SRE Assignment
+# Symphony SRE Assignment
 
 Please allocate up to two hours to complete this exercise, you may present missing components, or make changes to your submission during the follow up meetings. Please note, this isn't scored based on completion but based on the approach and the critical thinking used to complete the excercise.
 
