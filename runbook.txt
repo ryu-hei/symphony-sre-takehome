@@ -1,0 +1,51 @@
+This is to show the steps of how to start up kubernetes by using minikube and add the container you have created into kubernetes.
+
+Container creation
+1. Docker compose installation.  Run following command to download docker-compose and install it.
+Reference: https://docs.docker.com/compose/install/
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+2. Create docker-composer.yml to create a container.
+Create a text file called docker-composer.yml and configure the detail of the container
+My example is simple nginx web page.  Contents of the site can be stored in ./src locally to create the container
+3. Run docker-compose to test the container. Run following command to test the container and see the container acts as web service.
+docker-container up
+Access http://localhost/ from the browser to confirm
+ctrl+c to exit/terminate the container process
+
+Once you confirm the container is working as planned, you are ready to implement it to kubernetes
+
+Kubernetes installation
+1. Run following commands to download minikube and install it.
+Reference: https://minikube.sigs.k8s.io/docs/start/
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+2. Run following commands to download kubectl and install it.
+Reference: https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+3. Run following commands to donwload kompose and install it.
+Reference: https://kompose.io/installation/#github-release
+curl -L https://github.com/kubernetes/kompose/releases/download/v1.26.1/kompose-linux-amd64 -o kompose
+chmod +x kompose
+sudo mv ./kompose /usr/local/bin/kompose
+
+4. Run following command to start Kubernetes
+minikube start
+
+Implementation of container to Kubernetes
+1. Run kompose to generate YAML files for Kubernetes
+Reference: https://kubernetes.io/docs/tasks/configure-pod-container/translate-compose-kubernetes/
+kompose convert
+
+2. Deploy geeenerated files into Kubernetes by running following command
+kubectl apply -f file1,file2,file3
+Files must be separated by comma
+
+3. Access to deployed application by running following commmmand
+minikube service container_name
+
+You may run "minikube dashboard" to confirm the service is up and running in the kubernetes
+Or curl to the loadbalancer or container ip address to confirm the service.
